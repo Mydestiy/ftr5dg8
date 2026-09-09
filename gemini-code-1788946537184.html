@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài Kiểm Tra Tiếng Anh Tương Tác - Ms Lê Hằng English</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-pink: #ff6b8b;
+      --primary-pink-dark: #d84315;
+      --pastel-pink-bg: #fff0f5;
+      --pastel-purple-hl: #a855f7;
+      --accent-green: #00d26a;
+      --accent-red: #ff4757;
+      --accent-yellow: #fdcb6e;
+      --bg-gradient-1: #ffb6c1;
+      --bg-gradient-2: #ff80bf;
+      --bg-gradient-3: #a855f7;
+      --bg-gradient-4: #fda4af;
+      --card-bg: rgba(255, 255, 255, 0.96);
+      --card-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      --btn-shadow: 0 5px 0px rgba(0,0,0,0.15);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    ::selection {
+      background-color: var(--pastel-purple-hl) !important;
+      color: #ffffff !important;
+    }
+
+    .user-highlight {
+      background-color: var(--pastel-purple-hl) !important;
+      color: #ffffff !important;
+      border-radius: 4px;
+      padding: 2px 4px;
+      display: inline;
+    }
+
+    body {
+      font-family: 'Nunito', 'Quicksand', sans-serif;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: linear-gradient(-45deg, var(--bg-gradient-1), var(--bg-gradient-2), var(--bg-gradient-3), var(--bg-gradient-4));
+      background-size: 400% 400%;
+      animation: gradientBG 12s ease infinite;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.25) 15%, transparent 15%), 
+                        url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='10' y='30' font-size='22'%3E🍎%3C/text%3E%3Ctext x='70' y='85' font-size='22'%3E🛒%3C/text%3E%3Ctext x='80' y='30' font-size='20'%3E⚠️%3C/text%3E%3Ctext x='15' y='95' font-size='20'%3E⭐%3C/text%3E%3Ctext x='45' y='60' font-size='18'%3E🌸%3C/text%3E%3C/svg%3E");
+      color: #2d3436;
+      overflow: hidden;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header {
+      background: rgba(255, 255, 255, 0.93);
+      backdrop-filter: blur(10px);
+      padding: 8px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      z-index: 100;
+      border-bottom: 3px solid #ffb6c1;
+    }
+
+    .brand-badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: #fff0f5;
+      padding: 4px 12px;
+      border-radius: 16px;
+      border: 2px solid #ffb6c1;
+    }
+
+    .brand-badge h1 {
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: #ff3366;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .timer-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #ffffff;
+      padding: 4px 14px;
+      border-radius: 20px;
+      border: 2px solid var(--primary-pink);
+    }
+
+    .timer-display {
+      font-size: 1.1rem;
+      font-weight: 900;
+      color: #ff3366;
+      min-width: 55px;
+      text-align: center;
+    }
+
+    .btn-gamified {
+      background: var(--primary-pink);
+      color: white;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 14px;
+      font-weight: 800;
+      font-size: 0.85rem;
+      cursor: pointer;
+      box-shadow: var(--btn-shadow);
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .btn-gamified:hover {
+      transform: translateY(-2px);
+      background: #ff4757;
+    }
+
+    .btn-gamified:active {
+      transform: translateY(2px);
+      box-shadow: 0 2px 0px rgba(0,0,0,0.15);
+    }
+
+    .btn-submit-main {
+      background: var(--accent-green);
+    }
+
+    .progress-box {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      width: 170px;
+    }
+
+    .progress-bar-bg {
+      flex: 1;
+      height: 12px;
+      background: #e2e8f0;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 2px solid #fff;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #fdcb6e, #00d26a);
+      transition: width 0.4s ease;
+    }
+
+    .progress-text {
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: #475569;
+    }
+
+    .passage-tabs {
+      display: flex;
+      gap: 6px;
+      background: rgba(255,255,255,0.85);
+      padding: 4px;
+      border-radius: 14px;
+    }
+
+    .tab-btn {
+      padding: 5px 12px;
+      border: none;
+      border-radius: 10px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      cursor: pointer;
+      background: transparent;
+      color: #64748b;
+      transition: all 0.2s;
+    }
+
+    .tab-btn.active {
+      background: #ffffff;
+      color: #ff3366;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .main-container {
+      flex: 1;
+      display: flex;
+      gap: 15px;
+      padding: 15px;
+      overflow: hidden;
+    }
+
+    .split-pane {
+      flex: 1;
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 20px;
+      overflow-y: auto;
+      box-shadow: var(--card-shadow);
+      border: 3px solid rgba(255, 255, 255, 0.9);
+      position: relative;
+    }
+
+    .passage-title {
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: #ff3366;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 3px dashed #ffb6c1;
+    }
+
+    .paragraph-block {
+      margin-bottom: 16px;
+      background: #ffffff;
+      padding: 14px;
+      border-radius: 14px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.03);
+      border-left: 4px solid var(--primary-pink);
+    }
+
+    .paragraph-text {
+      font-size: 0.98rem;
+      line-height: 1.7;
+      color: #1e293b;
+      margin-bottom: 8px;
+    }
+
+    .translate-btn {
+      background: #f0f3ff;
+      color: #4f46e5;
+      border: 1px solid #c7d2fe;
+      padding: 4px 10px;
+      border-radius: 8px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .translate-btn:hover {
+      background: #e0e7ff;
+    }
+
+    .translation-content {
+      display: none;
+      margin-top: 8px;
+      padding: 10px;
+      background: #f8fafc;
+      border-radius: 8px;
+      border-left: 3px solid #6366f1;
+      font-size: 0.9rem;
+      color: #334155;
+      line-height: 1.6;
+    }
+
+    .translation-content.show {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .evidence-highlight {
+      background-color: #fef08a !important;
+      color: #000 !important;
+      box-shadow: 0 0 10px #fde047;
+      border-radius: 4px;
+      padding: 2px 4px;
+      animation: pulseGlow 1.2s infinite alternate;
+    }
+
+    @keyframes pulseGlow {
+      from { transform: scale(1); }
+      to { transform: scale(1.02); }
+    }
+
+    .glossary-box {
+      margin-top: 25px;
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 16px;
+      border: 2px solid #f1f5f9;
+    }
+
+    .glossary-title {
+      font-size: 1rem;
+      font-weight: 800;
+      color: #ff3366;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .glossary-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+    }
+
+    .glossary-table th, .glossary-table td {
+      padding: 8px;
+      border-bottom: 1px solid #edf2f7;
+      text-align: left;
+    }
+
+    .glossary-table th {
+      background: #fff0f5;
+      color: #ff3366;
+      font-weight: 800;
+    }
+
+    .question-card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 18px;
+      margin-bottom: 18px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      border: 2px solid #f1f5f9;
+    }
+
+    .question-number {
+      display: inline-block;
+      background: #fff0f5;
+      color: #ff3366;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 10px;
+      font-size: 0.8rem;
+      margin-bottom: 8px;
+      border: 1px solid #ffb6c1;
+    }
+
+    .question-text {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .option-btn {
+      background: #f8fafc;
+      border: 2px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 10px 14px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      color: #334155;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .option-btn:hover {
+      background: #f1f5f9;
+      transform: translateX(3px);
+    }
+
+    .option-btn.correct {
+      background: #dcfce7 !important;
+      border-color: var(--accent-green) !important;
+      color: #15803d !important;
+      font-weight: 800;
+    }
+
+    .option-btn.wrong {
+      background: #ffe4e6 !important;
+      border-color: var(--accent-red) !important;
+      color: #b91c1c !important;
+      animation: shake 0.4s ease;
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      75% { transform: translateX(5px); }
+    }
+
+    .explanation-box {
+      display: none;
+      margin-top: 12px;
+      padding: 14px;
+      border-radius: 12px;
+      background: #f8fafc;
+      border: 2px dashed #cbd5e1;
+      font-size: 0.88rem;
+      line-height: 1.6;
+    }
+
+    .explanation-box.show {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .exp-item {
+      margin-bottom: 6px;
+    }
+
+    .exp-title {
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .locate-btn {
+      background: #fef08a;
+      color: #854d0e;
+      border: 1px solid #fde047;
+      padding: 5px 10px;
+      border-radius: 8px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      cursor: pointer;
+      margin-top: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.2s;
+    }
+
+    .locate-btn:hover {
+      background: #fde047;
+      transform: scale(1.02);
+    }
+
+    /* CSS Rendered Notice Signs for Section V */
+    .sign-card-offer {
+      background: #ffffff;
+      border: 3px solid #000000;
+      border-radius: 12px;
+      padding: 14px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      width: 260px;
+      margin: 0 auto 14px auto;
+      font-family: Arial, sans-serif;
+    }
+
+    .sign-card-offer .badge {
+      background: #000000;
+      color: #ffffff;
+      font-size: 0.75rem;
+      font-weight: 900;
+      padding: 3px 8px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: 6px;
+      letter-spacing: 0.5px;
+    }
+
+    .sign-card-offer .title {
+      font-size: 0.95rem;
+      font-weight: 900;
+      color: #000000;
+      margin-bottom: 6px;
+    }
+
+    .sign-card-offer .details {
+      font-size: 1.1rem;
+      font-weight: 900;
+      color: #d84315;
+      margin-bottom: 6px;
+    }
+
+    .sign-card-offer .end-time {
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: #000000;
+      border-top: 1px solid #000;
+      padding-top: 4px;
+    }
+
+    .sign-card-caution {
+      background: #ffffff;
+      border: 3px solid #000000;
+      border-radius: 10px;
+      padding: 12px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      width: 240px;
+      margin: 0 auto 14px auto;
+      font-family: Arial, sans-serif;
+    }
+
+    .sign-card-caution .caution-header {
+      background: #000000;
+      color: #ffffff;
+      font-size: 1.1rem;
+      font-weight: 900;
+      padding: 4px 10px;
+      border-radius: 4px;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .sign-card-caution .caution-body {
+      font-size: 0.95rem;
+      font-weight: 900;
+      color: #000000;
+      line-height: 1.3;
+    }
+
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-overlay.show {
+      display: flex;
+    }
+
+    .modal-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 24px;
+      width: 90%;
+      max-width: 440px;
+      text-align: center;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+      border: 4px solid var(--primary-pink);
+    }
+
+    .modal-score {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: #ff3366;
+      margin: 10px 0;
+    }
+
+    .modal-comment {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #334155;
+      margin-bottom: 16px;
+    }
+
+    #confetti-canvas {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      pointer-events: none;
+      z-index: 999;
+    }
+
+    @media (max-width: 850px) {
+      .main-container {
+        flex-direction: column;
+        overflow-y: auto;
+      }
+      body { overflow: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <canvas id="confetti-canvas"></canvas>
+
+  <header>
+    <div class="brand-badge">
+      <span>👩‍🏫</span>
+      <h1>Ms Lê Hằng English</h1>
+    </div>
+
+    <div class="passage-tabs">
+      <button class="tab-btn active" onclick="switchPassage(1)">IV. History of Supermarkets 🛒</button>
+      <button class="tab-btn" onclick="switchPassage(2)">V. Notice & Warning Signs ⚠️</button>
+    </div>
+
+    <div class="timer-container">
+      <button class="btn-gamified" id="timer-toggle-btn" onclick="toggleTimer()">⏱️ BẮT ĐẦU TÍNH GIỜ LÀM BÀI</button>
+      <span class="timer-display" id="timer-display">20:00</span>
+    </div>
+
+    <div class="progress-box">
+      <div class="progress-bar-bg">
+        <div class="progress-bar-fill" id="progress-fill"></div>
+      </div>
+      <span class="progress-text" id="progress-text">0%</span>
+    </div>
+
+    <button class="btn-gamified btn-submit-main" onclick="submitTest()">🏆 NỘP BÀI</button>
+  </header>
+
+  <main class="main-container">
+    <div class="split-pane" id="reading-pane"></div>
+    <div class="split-pane" id="exercise-pane"></div>
+  </main>
+
+  <div class="modal-overlay" id="result-modal">
+    <div class="modal-card">
+      <h2>🎉 KẾT QUẢ BÀI THI 🎉</h2>
+      <div class="modal-score" id="score-text">0 / 0</div>
+      <div class="modal-comment" id="comment-text">Cố lên nhé!</div>
+      <button class="btn-gamified" onclick="closeModal()">Đóng & Xem Lại</button>
+    </div>
+  </div>
+
+  <script>
+    const passagesData = {
+      1: {
+        title: "IV. Read the following passage and mark the letter A, B, C or D on your answer.",
+        paragraphs: [
+          {
+            id: "p1_p1",
+            text: "Today, supermarkets are found in almost every large city in the world. But the first supermarket was <span id='p1_q1_evidence' class='evidence-target'>(1) opened</span> only fifty years ago. It was opened in New York by a man named Michael Cullen. A supermarket is different <span id='p1_q2_evidence' class='evidence-target'>(2) from</span> other types of stores in several ways. In supermarkets, goods are placed on open shelves. The <span id='p1_q3_evidence' class='evidence-target'>(3) customers</span> choose what they want and take them to the checkout counter. This means that fewer shop assistants are needed than in other stores.",
+            translation: "Ngày nay, siêu thị có mặt ở hầu hết mọi thành phố lớn trên thế giới. Nhưng siêu thị đầu tiên mới chỉ được mở ra cách đây 50 năm. Nó được khai trương tại New York bởi một người đàn ông tên là Michael Cullen. Một siêu thị thì khác biệt với các loại hình cửa hàng khác theo nhiều cách. Trong siêu thị, hàng hóa được đặt trên các kệ mở. Khách hàng tự chọn những gì họ muốn và mang chúng đến quầy thanh toán. Điều này có nghĩa là cần ít nhân viên bán hàng hơn so với các cửa hàng khác."
+          },
+          {
+            id: "p1_p2",
+            text: "The way products are displayed is another difference between supermarkets and many other types of stores; <span id='p1_q4_evidence' class='evidence-target'>(4) for</span> example, in supermarkets, there is usually a display of small inexpensive items just in front of the checkout counter: candies, chocolates, magazines, cheap foods and so on. Most customers <span id='p1_q5_evidence' class='evidence-target'>(5) who</span> go to a supermarket buy goods from a shopping list. They know exactly what they need to buy. They do the shopping according to a plan.",
+            translation: "Cách thức sản phẩm được trưng bày là một điểm khác biệt khác giữa siêu thị và nhiều loại hình cửa hàng khác; ví dụ như, trong siêu thị, thường có một khu trưng bày các mặt hàng nhỏ rẻ tiền ngay phía trước quầy thanh toán: kẹo, socola, tạp chí, thực phẩm giá rẻ, v.v. Hầu hết những khách hàng đi đến siêu thị đều mua hàng hóa dựa theo một danh sách mua sắm. Họ biết chính xác những gì họ cần mua. Họ đi mua sắm theo một kế hoạch đã định sẵn."
+          }
+        ],
+        glossary: [
+          { word: "Supermarket (n)", type: "Noun", meaning: "Siêu thị", synonym: "Grocery store / Mart" },
+          { word: "Revive (v)", type: "Verb", meaning: "Hồi sinh / Làm sống lại", synonym: "Resurrect / Restore" },
+          { word: "Interact (v)", type: "Verb", meaning: "Tương tác", synonym: "Communicate / Engage" },
+          { word: "Greet (v)", type: "Verb", meaning: "Chào hỏi / Đón tiếp", synonym: "Welcome / Saluted" },
+          { word: "Open (v)", type: "Verb", meaning: "Mở cửa / Khai trương", synonym: "Launch / Establish" },
+          { word: "Different from (adj phr)", type: "Adj", meaning: "Khác biệt so với", synonym: "Distinct from / Dissimilar to" },
+          { word: "Shelf (n)", type: "Noun", meaning: "Kệ / Giá sách (số nhiều: shelves)", synonym: "Racks / Ledges" },
+          { word: "Customer (n)", type: "Noun", meaning: "Khách hàng", synonym: "Shopper / Client / Buyer" },
+          { word: "Manager (n)", type: "Noun", meaning: "Người quản lý", synonym: "Supervisor / Director" },
+          { word: "Assistant (n)", type: "Noun", meaning: "Trợ lý / Nhân viên hỗ trợ", synonym: "Helper / Aide" },
+          { word: "Seller (n)", type: "Noun", meaning: "Người bán hàng", synonym: "Vendor / Merchant" },
+          { word: "Checkout counter (n)", type: "Noun", meaning: "Quầy thanh toán / Quầy thu ngân", synonym: "Cashier desk / Till" },
+          { word: "Display (v/n)", type: "Verb/Noun", meaning: "Trưng bày / Sự hiển thị", synonym: "Exhibition / Showcase" },
+          { word: "Inexpensive (adj)", type: "Adj", meaning: "Không đắt / Rẻ tiền", synonym: "Cheap / Affordable" },
+          { word: "Item (n)", type: "Noun", meaning: "Mặt hàng / Món đồ", synonym: "Product / Article" },
+          { word: "Magazine (n)", type: "Noun", meaning: "Tạp chí", synonym: "Periodical / Journal" },
+          { word: "According to (prep)", type: "Prep", meaning: "Theo như / Dựa theo", synonym: "In line with / Following" },
+          { word: "Relative pronoun (n)", type: "Grammar", meaning: "Đại từ quan hệ", synonym: "Connecting pronoun" },
+          { word: "Preposition (n)", type: "Grammar", meaning: "Giới từ", synonym: "Relating word" },
+          { word: "Collocation (n)", type: "Grammar", meaning: "Cụm từ cố định", synonym: "Set phrase" },
+          { word: "Passive voice (n)", type: "Grammar", meaning: "Thể bị động", synonym: "Passive construction" }
+        ],
+        questions: [
+          {
+            id: "p1_q1",
+            type: "mcq",
+            question: "1. Today, supermarkets are found in almost every large city in the world. But the first supermarket was (1)______ only fifty years ago.",
+            options: [
+              "A. revived",
+              "B. interacted",
+              "C. opened",
+              "D. greeted"
+            ],
+            answer: "C. opened",
+            explanationType: "vocab_grammar",
+            explanation: {
+              translation: "Ngày nay, siêu thị có mặt ở hầu hết mọi thành phố lớn trên thế giới. Nhưng siêu thị đầu tiên mới chỉ được ______ cách đây 50 năm.",
+              optionsAnalysis: [
+                "A. revived (v - dạng quá khứ/quá khứ phân từ): hồi sinh, làm sống lại.",
+                "B. interacted (v - dạng quá khứ/quá khứ phân từ): tương tác, giao tiếp.",
+                "C. opened (v - dạng quá khứ/quá khứ phân từ): mở cửa, khai trương, thành lập.",
+                "D. greeted (v - dạng quá khứ/quá khứ phân từ): chào hỏi, đón tiếp."
+              ],
+              whyCorrect: "Mệnh đề mang nghĩa bị động 'was opened' (được mở cửa / khai trương). Nghĩa này khớp hoàn toàn với câu tiếp theo trong bài đọc: 'It was opened in New York by a man named Michael Cullen' (Nó được khai trương tại New York bởi một người tên là Michael Cullen).",
+              whyWrong: "A (revived) sai vì siêu thị lúc đó mới xuất hiện lần đầu, không phải được hồi sinh; B (interacted) và D (greeted) hoàn toàn sai ngữ nghĩa trong bối cảnh thành lập một cửa hàng/siêu thị.",
+              evidenceId: "p1_q1_evidence"
+            }
+          },
+          {
+            id: "p1_q2",
+            type: "mcq",
+            question: "2. A supermarket is different (2)______ other types of stores in several ways.",
+            options: [
+              "A. in",
+              "B. from",
+              "C. of",
+              "D. with"
+            ],
+            answer: "B. from",
+            explanationType: "vocab_grammar",
+            explanation: {
+              translation: "Một siêu thị thì khác biệt ______ các loại hình cửa hàng khác theo nhiều cách.",
+              optionsAnalysis: [
+                "A. in (prep - giới từ): trong, ở trong.",
+                "B. from (prep - giới từ): từ, so với.",
+                "C. of (prep - giới từ): của.",
+                "D. with (prep - giới từ): với, cùng với."
+              ],
+              whyCorrect: "Cấu trúc tính từ đi kèm giới từ cố định: 'be different from sb/sth' (khác biệt so với ai/cái gì). Do đó giới từ bắt buộc ở đây phải là 'from'.",
+              whyWrong: "A (in) chỉ sự khác biệt về mặt khía cạnh; C (of) và D (with) là các lỗi sử dụng giới từ sai phổ biến khi kết hợp với tính từ 'different'.",
+              evidenceId: "p1_q2_evidence"
+            }
+          },
+          {
+            id: "p1_q3",
+            type: "mcq",
+            question: "3. In supermarkets, goods are placed on open shelves. The (3)______ choose what they want and take them to the checkout counter.",
+            options: [
+              "A. customers",
+              "B. managers",
+              "C. assistants",
+              "D. sellers"
+            ],
+            answer: "A. customers",
+            explanationType: "vocab_grammar",
+            explanation: {
+              translation: "Trong siêu thị, hàng hóa được đặt trên các kệ mở. Những ______ chọn những gì họ muốn và mang chúng đến quầy thanh toán.",
+              optionsAnalysis: [
+                "A. customers (n - danh từ số nhiều): khách hàng, người mua hàng.",
+                "B. managers (n - danh từ số nhiều): người quản lý, giám đốc.",
+                "C. assistants (n - danh từ số nhiều): trợ lý, nhân viên hỗ trợ.",
+                "D. sellers (n - danh từ số nhiều): người bán hàng."
+              ],
+              whyCorrect: "Trong mô hình siêu thị tự phục vụ, chính 'khách hàng' (customers) là người trực tiếp tự lựa chọn đồ đạc trên kệ và mang ra quầy thu ngân để trả tiền.",
+              whyWrong: "B (người quản lý) không phải là người mua hàng; C (trợ lý/nhân viên) được nhắc tới ở câu sau là 'fewer shop assistants' (cần ít nhân viên hơn); D (người bán) sai vai trò trong bối cảnh người đi chọn hàng.",
+              evidenceId: "p1_q3_evidence"
+            }
+          },
+          {
+            id: "p1_q4",
+            type: "mcq",
+            question: "4. The way products are displayed is another difference between supermarkets and many other types of stores; (4)______ example, in supermarkets, there is usually a display...",
+            options: [
+              "A. in",
+              "B. for",
+              "C. of",
+              "D. by"
+            ],
+            answer: "B. for",
+            explanationType: "vocab_grammar",
+            explanation: {
+              translation: "Cách thức sản phẩm được trưng bày là một điểm khác biệt khác giữa siêu thị và nhiều loại hình cửa hàng khác; ______ ví dụ, trong siêu thị, thường có một khu trưng bày...",
+              optionsAnalysis: [
+                "A. in (prep - giới từ): trong.",
+                "B. for (prep - giới từ): cho, để.",
+                "C. of (prep - giới từ): của.",
+                "D. by (prep - giới từ): bởi, bằng."
+              ],
+              whyCorrect: "Cụm từ nối cố định trong tiếng Anh: 'for example' nghĩa là 'ví dụ như, ví dụ là', được dùng để đưa ra một ví dụ minh họa trực quan cho câu nói phía trước.",
+              whyWrong: "Các phương án A (in example), C (of example), D (by example) đều không cấu tạo thành cụm từ nối có nghĩa trong ngữ pháp tiếng Anh.",
+              evidenceId: "p1_q4_evidence"
+            }
+          },
+          {
+            id: "p1_q5",
+            type: "mcq",
+            question: "5. Most customers (5)______ go to a supermarket buy goods from a shopping list.",
+            options: [
+              "A. who",
+              "B. what",
+              "C. which",
+              "D. Whom"
+            ],
+            answer: "A. who",
+            explanationType: "vocab_grammar",
+            explanation: {
+              translation: "Hầu hết những khách hàng ______ đi đến siêu thị đều mua hàng hóa dựa theo một danh sách mua sắm.",
+              optionsAnalysis: [
+                "A. who (đại từ quan hệ): người mà (thay thế cho danh từ chỉ người, làm chủ ngữ trong mệnh đề quan hệ).",
+                "B. what (đại từ/từ hỏi): cái gì.",
+                "C. which (đại từ quan hệ): cái mà (thay thế cho danh từ chỉ vật).",
+                "D. Whom (đại từ quan hệ): người mà (thay thế cho danh từ chỉ người, làm tân ngữ trong mệnh đề quan hệ)."
+              ],
+              whyCorrect: "Danh từ đứng trước 'Most customers' là danh từ chỉ người (khách hàng), phía sau là động từ 'go' nên ta cần một đại từ quan hệ thay thế cho người đóng vai trò làm chủ ngữ -> chọn 'who'.",
+              whyWrong: "B (what) không dùng làm đại từ quan hệ bổ nghĩa cho danh từ đứng trước; C (which) dùng cho danh từ chỉ vật; D (Whom) chỉ làm tân ngữ (sau Whom phải là một mệnh đề S + V, không thể đứng trực tiếp trước động từ 'go').",
+              evidenceId: "p1_q5_evidence"
+            }
+          }
+        ]
+      },
+      2: {
+        title: "V. What does the notice say?",
+        paragraphs: [
+          {
+            id: "p2_s1",
+            text: "<div class='sign-card-offer'><div class='badge'>SPECIAL SUPERMARKET OFFER</div><div class='title'>TODAY ONLY!</div><div class='details'>5 APPLES FOR $2 ONLY</div><div class='end-time'>OFFER ENDS AT 6P.M.</div></div><p class='paragraph-text'><strong>Biển báo 1:</strong> Thông báo khuyến mãi đặc biệt tại siêu thị áp dụng duy nhất trong ngày hôm nay. 5 quả táo giá chỉ 2 đô la. Chương trình kết thúc lúc 6 giờ tối.</p>",
+            translation: "ƯU ĐÃI ĐẶC BIỆT TẠI SIÊU THỊ CHỈ TRONG HÔM NAY! 5 QUẢ TÁO CHỈ $2. CHƯƠNG TRÌNH KẾT THÚC LÚC 6 GIỜ TỐI."
+          },
+          {
+            id: "p2_s2",
+            text: "<div class='sign-card-caution'><div class='caution-header'>CAUTION</div><div class='caution-body'>CONSTRUCTION IN PROGRESS</div></div><p class='paragraph-text'><strong>Biển báo 2:</strong> Biển cảnh báo nguy hiểm/chú ý tại khu vực đang có công trình thi công xây dựng.</p>",
+            translation: "CẢNH BÁO / CHÚ Ý: CÔNG TRÌNH ĐANG THI CÔNG."
+          }
+        ],
+        glossary: [
+          { word: "Special offer (n phr)", type: "Noun", meaning: "Chương trình ưu đãi đặc biệt", synonym: "Promotion / Discount" },
+          { word: "End (v)", type: "Verb", meaning: "Kết thúc / Chấm dứt", synonym: "Finish / Terminate" },
+          { word: "Caution (n)", type: "Noun", meaning: "Sự cẩn trọng / Lời cảnh báo", synonym: "Warning / Alert" },
+          { word: "Construction (n)", type: "Noun", meaning: "Sự xây dựng / Công trình", synonym: "Building work / Structure" },
+          { word: "In progress (idiom)", type: "Idiom", meaning: "Đang tiến hành / Đang diễn ra", synonym: "Underway / Ongoing" },
+          { word: "Cheaper (adj)", type: "Adj", meaning: "Rẻ hơn", synonym: "Less expensive / Discounted" },
+          { word: "Happen (v)", type: "Verb", meaning: "Xảy ra / Diễn ra", synonym: "Occur / Take place" },
+          { word: "Building work (n phr)", type: "Noun", meaning: "Công việc xây dựng", synonym: "Construction work" },
+          { word: "Pedestrian (n)", type: "Noun", meaning: "Người đi bộ", synonym: "Walker / Foot traveler" },
+          { word: "Safety (n)", type: "Noun", meaning: "Sự an toàn", synonym: "Security / Protection" },
+          { word: "Notice (n)", type: "Noun", meaning: "Thông báo / Biển báo", synonym: "Sign / Announcement" },
+          { word: "Expiration (n)", type: "Noun", meaning: "Sự hết hạn / Thời hạn", synonym: "Expiry / Termination" },
+          { word: "Temporary (adj)", type: "Adj", meaning: "Tạm thời", synonym: "Provisional / Short-term" },
+          { word: "Particular (adj)", type: "Adj", meaning: "Cụ thể / Đặc biệt", synonym: "Specific / Certain" },
+          { word: "Demonstrate (v)", type: "Verb", meaning: "Minh họa / Chứng minh", synonym: "Illustrate / Show" },
+          { word: "Explanations (n)", type: "Noun", meaning: "Các lời giải thích", synonym: "Clarifications / Justifications" },
+          { word: "Strictly (adv)", type: "Adv", meaning: "Một cách nghiêm ngặt", synonym: "Rigorously / Precisely" },
+          { word: "Structure (n)", type: "Noun", meaning: "Cấu trúc / Bố cục", synonym: "Organization / Framework" },
+          { word: "Analysis (n)", type: "Noun", meaning: "Sự phân tích", synonym: "Examination / Study" },
+          { word: "Context (n)", type: "Noun", meaning: "Ngữ cảnh / Bối cảnh", synonym: "Background / Setting" },
+          { word: "Option (n)", type: "Noun", meaning: "Lựa chọn / Đáp án", synonym: "Choice / Alternative" },
+          { word: "Incorrect (adj)", type: "Adj", meaning: "Không chính xác / Sai", synonym: "Wrong / Erroneous" },
+          { word: "Correct (adj)", type: "Adj", meaning: "Chính xác / Đúng", synonym: "Right / Accurate" },
+          { word: "Reason (n)", type: "Noun", meaning: "Lý do / Nguyên nhân", synonym: "Cause / Rationale" },
+          { word: "Indicate (v)", type: "Verb", meaning: "Chỉ ra / Cho thấy", synonym: "Show / Point out" },
+          { word: "Prohibit (v)", type: "Verb", meaning: "Cấm / Ngăn cấm", synonym: "Ban / Forbid" },
+          { word: "Permission (n)", type: "Noun", meaning: "Sự cho phép", synonym: "Authorization / Consent" },
+          { word: "Schedule (n)", type: "Noun", meaning: "Lịch trình / Thời gian biểu", synonym: "Timetable / Agenda" },
+          { word: "Duration (n)", type: "Noun", meaning: "Khoảng thời gian", synonym: "Period / Length" }
+        ],
+        questions: [
+          {
+            id: "p2_q1",
+            type: "mcq",
+            question: "1. What does the notice say? (SPECIAL SUPERMARKET OFFER TODAY ONLY! 5 APPLES FOR $2 ONLY. OFFER ENDS AT 6P.M.)",
+            options: [
+              "A. Today you can buy apples at a cheaper price before 6 p.m.",
+              "B. You can't buy any apples before 6 p.m.",
+              "C. You can buy cheaper apples after 6 p.m.",
+              "D. You can only buy apples today."
+            ],
+            answer: "A. Today you can buy apples at a cheaper price before 6 p.m.",
+            explanationType: "vocab_grammar",
+            explanation: {
+              translation: "Thông báo trên có ý nghĩa gì?",
+              optionsAnalysis: [
+                "A. Today you can buy apples at a cheaper price before 6 p.m. (Hôm nay bạn có thể mua táo với giá rẻ hơn trước 6 giờ tối.)",
+                "B. You can't buy any apples before 6 p.m. (Bạn không thể mua bất kỳ quả táo nào trước 6 giờ tối.)",
+                "C. You can buy cheaper apples after 6 p.m. (Bạn có thể mua táo rẻ hơn sau 6 giờ tối.)",
+                "D. You can only buy apples today. (Hôm nay bạn chỉ có thể mua mỗi táo.)"
+              ],
+              whyCorrect: "Biển thông báo ghi rõ chương trình giảm giá 'SPECIAL SUPERMARKET OFFER' (5 quả táo giá chỉ $2) diễn ra duy nhất hôm nay 'TODAY ONLY' và sẽ kết thúc lúc 6h tối 'OFFER ENDS AT 6P.M.'. Điều này đồng nghĩa với việc khách hàng có thể mua táo giá rẻ hơn trước 6h tối hôm nay.",
+              whyWrong: "B sai vì biển báo không cấm mua táo trước 6h; C sai vì chương trình ưu đãi kết thúc lúc 6h chứ không phải áp dụng sau 6h; D sai vì 'TODAY ONLY' là giới hạn thời gian khuyến mãi của hôm nay, chứ không phải cửa hàng chỉ bán mỗi mặt hàng táo.",
+              evidenceId: "p2_s1"
+            }
+          },
+          {
+            id: "p2_q2",
+            type: "mcq",
+            question: "2. What does the notice say? (CAUTION CONSTRUCTION IN PROGRESS)",
+            options: [
+              "A. Be careful because building work is happening.",
+              "B. You have to construct buildings with caution.",
+              "C. There is careful construction.",
+              "D. Construction must be carefully done in progress."
+            ],
+            answer: "A. Be careful because building work is happening.",
+            explanationType: "vocab_grammar",
+            explanation: {
+              translation: "Thông báo trên có ý nghĩa gì?",
+              optionsAnalysis: [
+                "A. Be careful because building work is happening. (Hãy cẩn thận vì công trình xây dựng đang diễn ra.)",
+                "B. You have to construct buildings with caution. (Bạn phải xây dựng các tòa nhà một cách cẩn trọng.)",
+                "C. There is careful construction. (Có một sự xây dựng cẩn thận.)",
+                "D. Construction must be carefully done in progress. (Việc xây dựng phải được thực hiện cẩn thận trong quá trình tiến hành.)"
+              ],
+              whyCorrect: "Từ 'CAUTION' có nghĩa là lời cảnh báo 'Hãy cẩn thận' (Be careful) dành cho người đi đường/khách qua lại; cụm từ 'CONSTRUCTION IN PROGRESS' có nghĩa là công trình xây dựng đang diễn ra (building work is happening). Do đó đáp án A là chính xác nhất.",
+              whyWrong: "B sai vì biển báo dành cho người đi đường chứ không phải câu lệnh yêu cầu thợ xây; C và D dịch gượng ép từ vựng, không truyền tải đúng tính chất của một biển báo cảnh báo an toàn.",
+              evidenceId: "p2_s2"
+            }
+          }
+        ]
+      }
+    };
+
+    let currentPassageId = 1;
+    let userAnswers = {};
+    let timerSeconds = 1200;
+    let timerInterval = null;
+    let isTimerRunning = false;
+    let isTestLocked = false;
+
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+    function playCorrectSound() {
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(523.25, audioCtx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(880, audioCtx.currentTime + 0.3);
+      gain.gain.setValueAtTime(0.3, audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.3);
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start();
+      osc.stop(audioCtx.currentTime + 0.3);
+    }
+
+    function playWrongSound() {
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = 'sawtooth';
+      osc.frequency.setValueAtTime(220, audioCtx.currentTime);
+      osc.frequency.linearRampToValueAtTime(110, audioCtx.currentTime + 0.35);
+      gain.gain.setValueAtTime(0.3, audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.35);
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start();
+      osc.stop(audioCtx.currentTime + 0.35);
+    }
+
+    function triggerConfetti() {
+      const canvas = document.getElementById('confetti-canvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      
+      let particles = [];
+      const colors = ['#ff6b8b', '#00d26a', '#fdcb6e', '#00c9a7', '#a855f7', '#ff4757'];
+      
+      for (let i = 0; i < 50; i++) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height - canvas.height,
+          r: Math.random() * 6 + 4,
+          d: Math.random() * 8 + 4,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          tilt: Math.floor(Math.random() * 10) - 10,
+          tiltAngleIncremental: Math.random() * 0.07 + 0.05,
+          tiltAngle: 0
+        });
+      }
+
+      let step = 0;
+      function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach((p) => {
+          ctx.beginPath();
+          ctx.lineWidth = p.r;
+          ctx.strokeStyle = p.color;
+          ctx.moveTo(p.x + p.tilt + p.r / 2, p.y);
+          ctx.lineTo(p.x + p.tilt, p.y + p.tilt + p.r / 2);
+          ctx.stroke();
+        });
+        update();
+        step++;
+        if (step < 90) requestAnimationFrame(draw);
+        else ctx.clearRect(0, 0, canvas.width, canvas.height);
+      }
+
+      function update() {
+        particles.forEach((p) => {
+          p.tiltAngle += p.tiltAngleIncremental;
+          p.y += (Math.cos(p.d) + 3 + p.r / 2) / 2;
+          p.tilt = Math.sin(p.tiltAngle) * 15;
+        });
+      }
+      draw();
+    }
+
+    function shuffleArray(array) {
+      let arr = [...array];
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+      return arr;
+    }
+
+    function toggleTimer() {
+      const btn = document.getElementById('timer-toggle-btn');
+      if (isTimerRunning) {
+        clearInterval(timerInterval);
+        isTimerRunning = false;
+        btn.innerText = "▶️ TIẾP TỤC TÍNH GIỜ";
+      } else {
+        isTimerRunning = true;
+        btn.innerText = "⏸️ TẠM DỪNG TÍNH GIỜ";
+        timerInterval = setInterval(() => {
+          if (timerSeconds > 0) {
+            timerSeconds--;
+            updateTimerDisplay();
+          } else {
+            clearInterval(timerInterval);
+            isTimerRunning = false;
+            isTestLocked = true;
+            alert("⏰ Đã hết giờ làm bài, vui lòng nộp bài nhé!");
+            disableAllInputs();
+          }
+        }, 1000);
+      }
+    }
+
+    function updateTimerDisplay() {
+      const mins = Math.floor(timerSeconds / 60);
+      const secs = timerSeconds % 60;
+      document.getElementById('timer-display').innerText = 
+        `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+    }
+
+    function disableAllInputs() {
+      document.querySelectorAll('button, select, input').forEach(el => {
+        if (!el.classList.contains('btn-submit-main') && el.id !== 'timer-toggle-btn') {
+          el.disabled = true;
+        }
+      });
+    }
+
+    function renderLeftPane(passageId) {
+      const pData = passagesData[passageId];
+      const readingPane = document.getElementById('reading-pane');
+      let html = `<div class="passage-title">${pData.title}</div>`;
+
+      pData.paragraphs.forEach((p) => {
+        html += `
+          <div class="paragraph-block">
+            <div class="paragraph-text">${p.text}</div>
+            <button class="translate-btn" onclick="toggleTranslation('${p.id}')">🌟 BẢN DỊCH ĐẦY ĐỦ</button>
+            <div class="translation-content" id="trans-${p.id}">${p.translation}</div>
+          </div>
+        `;
+      });
+
+      if (pData.glossary && pData.glossary.length > 0) {
+        html += `
+          <div class="glossary-box">
+            <div class="glossary-title">📚 Bảng Từ Vựng Academic (B2-C2) & Từ Đồng Nghĩa</div>
+            <table class="glossary-table">
+              <thead>
+                <tr>
+                  <th>Từ vựng</th>
+                  <th>Loại từ</th>
+                  <th>Nghĩa tiếng Việt</th>
+                  <th>Từ đồng nghĩa</th>
+                </tr>
+              </thead>
+              <tbody>
+        `;
+        pData.glossary.forEach(g => {
+          html += `
+            <tr>
+              <td><strong>${g.word}</strong></td>
+              <td><em>${g.type}</em></td>
+              <td>${g.meaning}</td>
+              <td><code>${g.synonym}</code></td>
+            </tr>
+          `;
+        });
+        html += `</tbody></table></div>`;
+      }
+
+      readingPane.innerHTML = html;
+    }
+
+    function renderRightPane(passageId) {
+      const pData = passagesData[passageId];
+      const exercisePane = document.getElementById('exercise-pane');
+      let html = "";
+
+      pData.questions.forEach((q, idx) => {
+        html += `<div class="question-card" id="card-${q.id}">`;
+        html += `<span class="question-number">Câu ${idx + 1}</span>`;
+
+        html += `<div class="question-text">${q.question}</div>`;
+
+        if (q.type === 'mcq') {
+          const shuffledOpts = shuffleArray(q.options);
+          html += `<div class="options-grid">`;
+          shuffledOpts.forEach((opt) => {
+            html += `
+              <button class="option-btn" id="opt-${q.id}-${cleanStr(opt)}" onclick="checkMCQ('${q.id}', '${escapeQuotes(opt)}')">
+                <span>${opt}</span>
+              </button>
+            `;
+          });
+          html += `</div>`;
+        }
+
+        // Render Explanation Box following strictly the 4 steps rule
+        html += `<div class="explanation-box" id="exp-${q.id}">`;
+        if (q.explanationType === 'vocab_grammar') {
+          html += `
+            <div class="exp-item"><span class="exp-title">1. Dịch câu hỏi / biển báo:</span> ${q.explanation.translation}</div>
+            <div class="exp-item"><span class="exp-title">2. Phân tích 4 đáp án (BẮT BUỘC):</span>
+              <ul style="margin-left:20px; margin-top:4px; list-style-type:circle;">
+                ${q.explanation.optionsAnalysis.map(optStr => `<li>${optStr}</li>`).join('')}
+              </ul>
+            </div>
+            <div class="exp-item" style="margin-top:6px;"><span class="exp-title">3. Tại sao chọn đáp án đúng?</span> ${q.explanation.whyCorrect}</div>
+            <div class="exp-item"><span class="exp-title">4. Tại sao các đáp án còn lại SAI?</span> ${q.explanation.whyWrong}</div>
+            ${q.explanation.evidenceId ? `<button class="locate-btn" onclick="locateEvidence('${q.explanation.evidenceId}')">📍 Vị trí dẫn chứng trong bài</button>` : ''}
+          `;
+        }
+        html += `</div></div>`;
+      });
+
+      exercisePane.innerHTML = html;
+    }
+
+    function checkMCQ(qId, selectedOpt) {
+      if (isTestLocked) return;
+      const q = findQuestion(qId);
+      const isCorrect = selectedOpt === q.answer;
+      userAnswers[qId] = isCorrect;
+
+      q.options.forEach(opt => {
+        const btn = document.getElementById(`opt-${qId}-${cleanStr(opt)}`);
+        if (btn) {
+          btn.disabled = true;
+          if (opt === q.answer) {
+            btn.classList.add('correct');
+          } else if (opt === selectedOpt) {
+            btn.classList.add('wrong');
+          }
+        }
+      });
+
+      handleAnswerResult(qId, isCorrect);
+    }
+
+    function handleAnswerResult(qId, isCorrect) {
+      const expBox = document.getElementById(`exp-${qId}`);
+      if (expBox) expBox.classList.add('show');
+
+      if (isCorrect) {
+        playCorrectSound();
+        triggerConfetti();
+      } else {
+        playWrongSound();
+      }
+
+      updateProgressBar();
+    }
+
+    function locateEvidence(elementId) {
+      const el = document.getElementById(elementId);
+      if (!el) return;
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      el.classList.add('evidence-highlight');
+      setTimeout(() => {
+        el.classList.remove('evidence-highlight');
+      }, 3500);
+    }
+
+    function toggleTranslation(pId) {
+      const el = document.getElementById(`trans-${pId}`);
+      if (el) el.classList.toggle('show');
+    }
+
+    function switchPassage(pNum) {
+      currentPassageId = pNum;
+      document.querySelectorAll('.tab-btn').forEach((btn, idx) => {
+        btn.classList.toggle('active', idx + 1 === pNum);
+      });
+      renderLeftPane(pNum);
+      renderRightPane(pNum);
+      updateProgressBar();
+    }
+
+    function updateProgressBar() {
+      let totalQuestions = 0;
+      Object.keys(passagesData).forEach(pKey => {
+        totalQuestions += passagesData[pKey].questions.length;
+      });
+
+      const answeredCount = Object.keys(userAnswers).length;
+      const percentage = Math.round((answeredCount / totalQuestions) * 100);
+
+      document.getElementById('progress-fill').style.width = `${percentage}%`;
+      document.getElementById('progress-text').innerText = `${percentage}%`;
+    }
+
+    function submitTest() {
+      let totalQuestions = 0;
+      let correctCount = 0;
+
+      Object.keys(passagesData).forEach(pKey => {
+        passagesData[pKey].questions.forEach(q => {
+          totalQuestions++;
+          if (userAnswers[q.id] === true) {
+            correctCount++;
+          }
+        });
+      });
+
+      const scoreText = `${correctCount} / ${totalQuestions}`;
+      document.getElementById('score-text').innerText = scoreText;
+
+      let comment = "Cố lên nhé! Hãy đọc lại các phần giải thích chi tiết để nắm chắc kiến thức!";
+      const ratio = correctCount / totalQuestions;
+      if (ratio === 1) {
+        comment = "🌟 THIÊN TÀI! Bạn xuất sắc đạt 100% điểm số!";
+      } else if (ratio >= 0.7) {
+        comment = "🎉 LÀM TỐT LẮM! Kỹ năng làm bài của bạn rất ấn tượng!";
+      }
+
+      document.getElementById('comment-text').innerText = comment;
+      document.getElementById('result-modal').classList.add('show');
+      triggerConfetti();
+    }
+
+    function closeModal() {
+      document.getElementById('result-modal').classList.remove('show');
+    }
+
+    function findQuestion(qId) {
+      for (let pKey in passagesData) {
+        const found = passagesData[pKey].questions.find(q => q.id === qId);
+        if (found) return found;
+      }
+      return null;
+    }
+
+    function cleanStr(str) {
+      return str.replace(/[^a-zA-Z0-9]/g, '');
+    }
+
+    function escapeQuotes(str) {
+      return str.replace(/'/g, "\\'");
+    }
+
+    window.onload = () => {
+      renderLeftPane(1);
+      renderRightPane(1);
+      updateProgressBar();
+    };
+  </script>
+</body>
+</html>
